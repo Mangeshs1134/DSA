@@ -1,24 +1,27 @@
-// Ques.1 Product of Array except Self 
-/**
- * @param {number[]} nums
- * @return {number[]}
- */
-var productExceptSelf = function(nums) {
-    length= nums.length
-    let prefix= Array(length).fill(1);
-    let suffix= Array(length).fill(1);
-    let output= Array(length).fill(1);
-
-    prefix[0]=1;
-    for i in range (1, length){
-        prefix[i]= prefix[i-1]*nums[i-1]
+// Ques- Container With Most Water
+var maxArea = function(height) {
+    // height= height
+    let n= height.length
+    let max=0;
+    let right= n-1;
+    let left= 0;
+    while(right>left){
+        let len = height[left];
+        if(height[left]>height[right]) {
+            len= height[right]
+        }
+        let width= right-left;
+        let area = len * width;
+        if (area > max) {
+            max= area;
+        }
+        
+        if(height[left] > height[right]){
+            right=right-1
+        }
+        else{
+            left=left+1
+        }
     }
-    suffix[length-1]=1;
-    for(let i=length-2; i>0; i--){
-        suffix[i]= suffix[i+1]*nums[i+1]
-    }
-    for i in range length {
-        output[i]=prefix[i]*suffix[i]
-    }
-    return output;
+    return max;
 };
