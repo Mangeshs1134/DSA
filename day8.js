@@ -38,3 +38,30 @@ var isPowerOfTwo = function(n) {
     return false;
 
 };
+// ques 3 fibonocci number
+/**
+ * @param {number} n
+ * @return {number}
+ */
+
+var fib = function(n) {
+    if (n===0) {
+        return 0;
+    }else if(n===1){
+        return 1;
+    }
+
+    let f1= 0;
+    let f2= 1;
+    for (let i = 1; i <= n; i++) {
+        
+        let f3= f1+f2;
+
+        f1= f2;
+        f2= f3;
+
+        
+    }
+    return f1
+
+};
