@@ -18,3 +18,23 @@ var isPalindrome = function(x) {
     return true;
 
 };
+// ques 2 power of two
+/**
+ * @param {number} n
+ * @return {boolean}
+ */
+var isPowerOfTwo = function(n) {
+    if(n===1){
+        return true;
+    }else if(n%2!==0){
+        return false;
+    }else{
+        for (let i = 1; i <= 30; i++) {
+            if (Math.pow(2,i)===n) {
+                return true;
+            }
+         }
+    }
+    return false;
+
+};
