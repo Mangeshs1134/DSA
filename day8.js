@@ -65,3 +65,42 @@ var fib = function(n) {
     return f1
 
 };
+
+// ques 4 waterbottles
+/**
+ * @param {number} numBottles
+ * @param {number} numExchange
+ * @return {number}
+ */
+var numWaterBottles = function(numBottles, numExchange) {
+    let temp= numBottles;
+    while(numBottles>=numExchange){
+        temp= temp + Math.floor(numBottles/numExchange)
+        numBottles= Math.floor(numBottles/numExchange) + (numBottles%numExchange)
+    }
+    return temp;
+};
+//  kth tribonacci number
+/**
+ * @param {number} n
+ * @return {number}
+ */
+var tribonacci = function(n) {
+    if (n===0) {
+        return 0;
+    }else if(n===1 || n===2){
+        return 1;
+    } 
+    let t1= 0, t2= 1, t3=  1;
+    for (let i = 1; i <=n ; i++) {
+        
+        let t4 = t3+t2+t1;
+
+        t1=t2;
+        t2=t3;
+        t3=t4;
+        
+    }
+    return t1;
+
+};
