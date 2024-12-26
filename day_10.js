@@ -27,3 +27,20 @@ var sortedSquares = function(nums) {
     nums = nums.sort((a,b)=> a-b)
     return nums
 };
+// two sum II
+var twoSum = function(arr, target) {
+    console.log(`function starts`);
+    
+    let low=0 ; let high = arr.length-1
+    while (high>=low) {
+        let total = arr[low] + arr[high]
+        if (total===target){
+            return [low+1, high+1]
+        }
+        if(total>target){
+            high--
+        }else{
+            low++
+        }
+    }
+};
