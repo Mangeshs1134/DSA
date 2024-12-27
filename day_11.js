@@ -14,3 +14,23 @@ var increasingTriplet = function(arr) {
     }
     return false;
 };
+//ques 2 maximum incresing subarray sum
+/**
+ * @param {number[]} nums
+ * @return {number}
+ */
+var maxAscendingSum = function(arr) {
+    let max = arr[0];
+    let current = arr[0];
+    for(let i=1 ; i<arr.length; i++){
+        if(arr[i]>arr[i-1]){
+            current += arr[i]
+        }else{
+            current = arr[i]
+        }
+        if(current>max){
+            max = current;
+        }
+    }
+    return max; 
+};
